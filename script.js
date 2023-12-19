@@ -13,15 +13,30 @@ function createPlayer(name) {
 // Create an object to control the flow of the game itself
     // Initialize board to empty
     // Player always plays first against CPU
-function initializeGame() {
+// function initializeGame() {
+//     // Initialize 2D array
+//     gameboardArray = [
+//         ["", "", ""],
+//         ["", "", ""],
+//         ["", "", ""]
+//     ];
+
+//     assignButtons();
+// }
+
+const game = {
     // Initialize 2D array
-    gameboardArray = [
+    gameboardArray: [
         ["", "", ""],
         ["", "", ""],
         ["", "", ""]
-    ];
-
-    assignButtons();
+    ],
+    // Update gameboard tiles
+    updateGameboard(row, col, playerSymbol) {
+        if(this.gameboardArray[row][col] == "") {
+            this.gameboardArray[row][col] == playerSymbol;
+        }
+    }
 }
 
 // Assign start game button
@@ -44,6 +59,19 @@ initializeBtn.addEventListener("click", () => {
 // Should check for a win everytime a new tile (X, O) is placed
 
 // Grabs all buttons from the gameboard and converts nodelist into array to use with forEach
+const tiles = document.querySelectorAll(".field");
+console.log("NEW TILES: " + tiles);
+
+tiles.forEach(tile => {
+    tile.addEventListener("click", function() {
+        
+    })
+})
+
+
+
+
+// Grabs all buttons from the gameboard and converts nodelist into array to use with forEach
 const tileFields = Array.from(document.getElementsByClassName("field"));
 
 // Update tile visuals and gameboardArray
@@ -55,9 +83,8 @@ function assignButtons() {
                 // Retrieve & convert row/col data field strings to numbers for processing
                 let tileRow = +this.dataset.row;
                 let tileCol = +this.dataset.col;
-    
-                // Update gameboardArray with player choice
-                gameboardArray[tileRow][tileCol] = "X";
+
+                updateGameboard(tileRow, tileCol);
     
                 // Change tile visual
                 this.innerHTML = "X";
@@ -71,6 +98,11 @@ function assignButtons() {
             actionCheck();
         })
     });    
+}
+
+function updateGameboard(tileRow, tileCol) {
+    // Update gameboardArray with player choice
+    gameboardArray[tileRow][tileCol] = "X";
 }
 
 // Check if game has ended
