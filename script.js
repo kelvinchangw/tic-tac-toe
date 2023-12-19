@@ -61,7 +61,8 @@ function assignButtons() {
     
                 // Change tile visual
                 this.innerHTML = "X";
-    
+                
+                // Debugging
                 console.log(gameboardArray);
                 console.log(tileRow, tileCol);
             }
