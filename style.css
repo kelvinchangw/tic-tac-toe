@@ -33,12 +33,22 @@ body {
 .gameboard-display {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     width: 40rem;
-    height: 40rem;
 }
 
 .field {
-    width: 33.33%;
-    height: 33.33%;
+    width: 12rem;
+    height: 12rem;
     font-size: 4rem;
+}
+
+.winning-tiles {
+    background-color: green;
+}
+
+.losing-tiles {
+    background-color: red;
 }
