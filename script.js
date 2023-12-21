@@ -112,13 +112,15 @@ const game = {
 
     endGame(playerSymbol) {
         let winningTiles = this.checkForWin(playerSymbol);
+        updateTileDisplayToInactive();
+        updateButtonToInactive();
+        updateTilesToInactive();
         if(winningTiles) {
             this.highlightWinningTiles(winningTiles);
         } else {
+            // Executes if no winner & all tiles filled
             this.highlightAllTiles();
         }
-
-        console.log("END GAME");
     },
 
     highlightWinningTiles(winningTiles) {
@@ -140,8 +142,37 @@ const initializeBtn = document.getElementById("initialize-btn");
 
 // Initialize game when initialize button is pressed
 initializeBtn.addEventListener("click", () => {
+    updateTileDisplayToInProgress();
+    updateButtonToInProgress();
+    updateTilesToInProgress();
     game.initializeGame();
 })
+
+function updateTileDisplayToInProgress() {
+    document.querySelector(".gameboard-display").classList.add("gameboard-display-active");
+}
+
+function updateTileDisplayToInactive() {
+    document.querySelector(".gameboard-display").classList.remove("gameboard-display-active");
+}
+
+function updateTilesToInProgress() {
+    tiles.forEach(tile => tile.classList.remove("inactive-tile"));
+}
+
+function updateTilesToInactive() {
+    tiles.forEach(tile => tile.classList.add("inactive-tile"));
+}
+
+function updateButtonToInProgress() {
+    initializeBtn.classList.add("in-progress");
+    initializeBtn.innerHTML = "IN PROGRESS";
+}
+
+function updateButtonToInactive() {
+    initializeBtn.classList.remove("in-progress");
+    initializeBtn.innerHTML = "NEW GAME";
+}
 
 // Goals
 // Avoid having global code
