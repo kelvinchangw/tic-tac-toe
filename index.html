@@ -18,29 +18,29 @@
     <!-- Display whose turn it currently is -->
         <!-- Add a THINKING status for both player and CPU -->
 
-    <!-- Start/restart button -->
-    <div class="initialize-btn-container">
-        <button class="initialize-btn" id="initialize-btn">START GAME</button>
-    </div>
-
     <!-- Display results on game end -->
 
     <div class="gameboard-container">
         <div class="gameboard-display">
-            <button class="field" data-row="0" data-col="0"></button>
-            <button class="field" data-row="0" data-col="1"></button>
-            <button class="field" data-row="0" data-col="2"></button>
+            <button class="field inactive-tile" data-row="0" data-col="0"></button>
+            <button class="field inactive-tile" data-row="0" data-col="1"></button>
+            <button class="field inactive-tile" data-row="0" data-col="2"></button>
         
-            <button class="field" data-row="1" data-col="0"></button>
-            <button class="field" data-row="1" data-col="1"></button>
-            <button class="field" data-row="1" data-col="2"></button>
+            <button class="field inactive-tile" data-row="1" data-col="0"></button>
+            <button class="field inactive-tile" data-row="1" data-col="1"></button>
+            <button class="field inactive-tile" data-row="1" data-col="2"></button>
         
-            <button class="field" data-row="2" data-col="0"></button>
-            <button class="field" data-row="2" data-col="1"></button>
-            <button class="field" data-row="2" data-col="2"></button>
+            <button class="field inactive-tile" data-row="2" data-col="0"></button>
+            <button class="field inactive-tile" data-row="2" data-col="1"></button>
+            <button class="field inactive-tile" data-row="2" data-col="2"></button>
         </div>
     </div>
 
+    <!-- Start/restart button -->
+    <div class="initialize-btn-container">
+        <button class="initialize-btn" id="initialize-btn">NEW GAME</button>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 
