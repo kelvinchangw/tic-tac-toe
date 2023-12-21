@@ -1,3 +1,7 @@
+:root {
+    --mauveine: #6a3a7a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,21 +17,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--mauveine);
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .initialize-btn-container {
     padding: 4rem;
 }
 
-.initialize-btn {
-    width: 20rem;
-    height: 4rem;
-}
-
 .gameboard-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--rich-black);
 }
 
 .gameboard-display {
@@ -35,14 +46,33 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     width: 40rem;
+    gap: 1rem;
 }
 
 .field {
     width: 12rem;
     height: 12rem;
     font-size: 4rem;
+    transition: .1s ease-out all;
+    background-color: gray;
+}
+
+.field:hover {
+    background-color: white;
+}
+
+.inactive-tile {
+    filter: brightness(70%);
+    pointer-events: none;
+}
+
+/* .active-tile {
+    filter: brightness(100%);
+} */
+
+.in-progress {
+
 }
 
 .winning-tiles {
@@ -51,4 +81,15 @@ body {
 
 .losing-tiles {
     background-color: red;
+}
+
+.initialize-btn {
+    width: 20rem;
+    height: 4rem;
+    background-color: gray;
+    transition: .1s ease-out all;
+}
+
+.initialize-btn:hover {
+    background-color: white;
 }
