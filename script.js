@@ -32,7 +32,9 @@ const game = {
             if(this.checkForFilled(playerSymbol) || this.checkForWin(playerSymbol)) {
                 this.endGame(playerSymbol);
             }
+            return true; // Tile was successfully placed
         }
+        return false; // Tile was filled/not placed
     },
 
     // checkForRowWin(playerSymbol) {
@@ -196,10 +198,8 @@ tiles.forEach(tile => {
         const row = +this.dataset.row;
         const col = +this.dataset.col;
 
-        game.updateGameboard(row, col, playerSymbol, this);
-
         // Players alternate for their turns
-        playerSymbol = playerSymbol === "X" ? "O" : "X";
+        if(game.updateGameboard(row, col, playerSymbol, this)) playerSymbol = playerSymbol == "X" ? "O" : "X";
     });
 });
 
