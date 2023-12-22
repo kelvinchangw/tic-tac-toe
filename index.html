@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,11 +20,26 @@
     <!-- Allow players to put their names -->
 
     <!-- Display whose turn it currently is -->
-        <!-- Add a THINKING status for both player and CPU -->
+        <!-- Add a THINKING status for both players -->
 
     <!-- Display results on game end -->
+    <div class="results-display container">
+        <div class="results player-x-display">
+            <span class="results-label">X</span>
+            <span class="numerical-display">0</span>
+        </div>
+        <div class="results draw-display">
+            <span class="results-label">DRAW</span>
+            <span class="numerical-display">0</span>
+        </div>
+        <div class="results player-o-display">
+            <span class="results-label">O</span>
+            <span class="numerical-display">0</span>
+        </div>
+    </div>
 
-    <div class="gameboard-container">
+    <!-- Gameboard display -->
+    <div class="container">
         <div class="gameboard-display">
             <button class="field inactive-tile" data-row="0" data-col="0"></button>
             <button class="field inactive-tile" data-row="0" data-col="1"></button>
@@ -37,7 +56,7 @@
     </div>
 
     <!-- Start/restart button -->
-    <div class="initialize-btn-container">
+    <div class="container">
         <button class="initialize-btn" id="initialize-btn">NEW GAME</button>
     </div>
     
