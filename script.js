@@ -1,7 +1,15 @@
-// // Players are stored in objects
-// function createPlayer(name) {
-//     const playerName = name;
-// }
+const xScoreDisplay = document.querySelector(".x-score-display");
+const oScoreDisplay = document.querySelector(".o-score-display");
+const drawScoreDisplay = document.querySelector(".draw-score-display");
+
+const players = {
+    updateScoreDisplay(winningPlayer) {
+        if(winningPlayer == "X") xScoreDisplay.textContent++;
+        if(winningPlayer == "O") oScoreDisplay.textContent++;
+        if(winningPlayer == "DRAW") drawScoreDisplay.textContent++;
+    }
+}
+
 
 // Game object
 const game = {
@@ -119,9 +127,11 @@ const game = {
         updateTilesToInactive();
         if(winningTiles) {
             this.highlightWinningTiles(winningTiles);
+            players.updateScoreDisplay(playerSymbol);
         } else {
             // Executes if no winner & all tiles filled
             this.highlightAllTiles();
+            players.updateScoreDisplay("DRAW");
         }
     },
 
