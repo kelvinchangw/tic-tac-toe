@@ -2,14 +2,19 @@ const xScoreDisplay = document.querySelector(".x-score-display");
 const oScoreDisplay = document.querySelector(".o-score-display");
 const drawScoreDisplay = document.querySelector(".draw-score-display");
 
+const turnUpdateText = document.querySelector(".turn-update-text");
+
 const players = {
     updateScoreDisplay(winningPlayer) {
         if(winningPlayer == "X") xScoreDisplay.textContent++;
         if(winningPlayer == "O") oScoreDisplay.textContent++;
         if(winningPlayer == "DRAW") drawScoreDisplay.textContent++;
+    },
+
+    updateTurnDisplay(currentPlayer) {
+        currentPlayer == "X" ? turnUpdateText.textContent = "O" : turnUpdateText.textContent = "X";
     }
 }
-
 
 // Game object
 const game = {
@@ -35,6 +40,8 @@ const game = {
         if(this.gameboardArray[row][col] == "") {
             this.gameboardArray[row][col] = playerSymbol;
             tileElement.innerHTML = playerSymbol;
+
+            players.updateTurnDisplay(playerSymbol);
 
             // End game if either board is filled or one of the win conditions are met
             if(this.checkForFilled(playerSymbol) || this.checkForWin(playerSymbol)) {
