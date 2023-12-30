@@ -1,5 +1,6 @@
 :root {
     --mauveine: #6a3a7a;
+    --bg-color: #282A2C;
 }
 
 * {
@@ -17,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--mauveine);
+    background-color: var(--bg-color);
 }
 
 button {
@@ -33,7 +34,7 @@ button {
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 1.6rem 0rem;
+    padding: 1.2rem 0rem;
 }
 
 .results-display {
@@ -41,8 +42,8 @@ button {
 }
 
 .results {
-    width: 12rem;
-    height: 12rem;
+    width: 8rem;
+    height: 8rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -53,15 +54,15 @@ button {
 }
 
 .results-label {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .numerical-display {
-    font-size: 4.8rem;
+    font-size: 3rem;
 }
 
 .turn-text {
-    font-size: 4.8rem;
+    font-size: 3.2rem;
 }
 
 .gameboard-container {
@@ -121,4 +122,11 @@ button {
 
 .initialize-btn:hover {
     background-color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(1);
 }
