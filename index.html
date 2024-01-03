@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d044f8f5da.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,57 +14,55 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
-
-    <!-- Allow players to put their names -->
-
-    <!-- Display whose turn it currently is -->
-        <!-- Add a THINKING status for both players -->
-
-    <!-- Display results on game end -->
-    <div class="results-display container">
-        <div class="results player-x-display">
-            <span class="results-label">X</span>
-            <span class="x-score-display numerical-display">0</span>
+    <div class="main-content">
+        <!-- Display results on game end -->
+        <div class="results-display container">
+            <div class="results player-x-display">
+                <span class="results-label">X</span>
+                <span class="x-score-display numerical-display">0</span>
+            </div>
+            <div class="results draw-display">
+                <span class="results-label">DRAW</span>
+                <span class="draw-score-display numerical-display">0</span>
+            </div>
+            <div class="results player-o-display">
+                <span class="results-label">O</span>
+                <span class="o-score-display numerical-display">0</span>
+            </div>
         </div>
-        <div class="results draw-display">
-            <span class="results-label">DRAW</span>
-            <span class="draw-score-display numerical-display">0</span>
-        </div>
-        <div class="results player-o-display">
-            <span class="results-label">O</span>
-            <span class="o-score-display numerical-display">0</span>
-        </div>
-    </div>
-
-    <div class="turn-display container">
-        <span class="turn-update-text turn-text">X</span>
-        <span class="turn-supporting-text turn-text">'S TURN</span>
-    </div>
-
-    <!-- Gameboard display -->
-    <div class="gameboard-container container">
-        <div class="gameboard-display">
-            <button class="field inactive-tile" data-row="0" data-col="0"></button>
-            <button class="field inactive-tile" data-row="0" data-col="1"></button>
-            <button class="field inactive-tile" data-row="0" data-col="2"></button>
+        <!-- Gameboard display -->
+        <div class="gameboard-container container">
+            <div class="gameboard-display">
+                <button class="field inactive-tile" data-row="0" data-col="0"></button>
+                <button class="field inactive-tile" data-row="0" data-col="1"></button>
+                <button class="field inactive-tile" data-row="0" data-col="2"></button>
         
-            <button class="field inactive-tile" data-row="1" data-col="0"></button>
-            <button class="field inactive-tile" data-row="1" data-col="1"></button>
-            <button class="field inactive-tile" data-row="1" data-col="2"></button>
+                <button class="field inactive-tile" data-row="1" data-col="0"></button>
+                <button class="field inactive-tile" data-row="1" data-col="1"></button>
+                <button class="field inactive-tile" data-row="1" data-col="2"></button>
         
-            <button class="field inactive-tile" data-row="2" data-col="0"></button>
-            <button class="field inactive-tile" data-row="2" data-col="1"></button>
-            <button class="field inactive-tile" data-row="2" data-col="2"></button>
+                <button class="field inactive-tile" data-row="2" data-col="0"></button>
+                <button class="field inactive-tile" data-row="2" data-col="1"></button>
+                <button class="field inactive-tile" data-row="2" data-col="2"></button>
+            </div>
+        </div>
+        <!-- Start/restart button -->
+        <div class="container">
+            <button class="initialize-btn" id="initialize-btn">NEW GAME</button>
         </div>
     </div>
 
-    <!-- Start/restart button -->
-    <div class="container">
-        <button class="initialize-btn" id="initialize-btn">NEW GAME</button>
-    </div>
+    <footer class="footer">
+        <span>
+            Built by Kelvin
+        </span>
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+        <a href="https://github.com/kelvinchangw" target = "_blank" id = "gitIcon">
+            <i class="fa-brands fa-github-square"></i>
+        </a>
+    </footer>
     
     <script src="script.js"></script>
 </body>

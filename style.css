@@ -1,6 +1,10 @@
 :root {
-    --mauveine: #6a3a7a;
-    --bg-color: #282A2C;
+    --bg-clr: #282A2C;
+    --btn-clr: #CD5334;
+    --field-clr: #5C6672;
+    --text-clr: #E6E6E6;
+    --win-clr: #5FFF5A;
+    --draw-clr: #FF5A5F;
 }
 
 * {
@@ -10,15 +14,14 @@
     box-sizing: border-box;
 }
 
-header {
-    /* height: 5rem; */
-}
-
 body {
+    height: 100vh;
+    padding: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--bg-color);
+    justify-content: space-between;
+    background-color: var(--bg-clr);
 }
 
 button {
@@ -29,6 +32,12 @@ button {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
@@ -44,7 +53,7 @@ button {
 .results {
     width: 8rem;
     height: 8rem;
-    background-color: white;
+    background-color: var(--text-clr);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,18 +64,12 @@ button {
 
 .results-label {
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .numerical-display {
     font-size: 3rem;
-}
-
-.turn-text {
-    font-size: 3.2rem;
-}
-
-.gameboard-container {
-
+    font-weight: 600;
 }
 
 .gameboard-display {
@@ -85,32 +88,24 @@ button {
     font-size: 4rem;
     transition: .1s ease-out all;
     border-radius: 4px;
-    background-color: gray;
+    background-color: var(--field-clr);
 }
 
 .field:hover {
-    background-color: white;
+    background-color: var(--text-clr);
 }
 
 .inactive-tile {
-    filter: brightness(70%);
+    filter: brightness(60%);
     pointer-events: none;
 }
 
-/* .active-tile {
-    filter: brightness(100%);
-} */
-
-.in-progress {
-
-}
-
 .winning-tiles {
-    background-color: green;
+    background-color: var(--win-clr);
 }
 
 .losing-tiles {
-    background-color: red;
+    background-color: var(--draw-clr);
 }
 
 .initialize-btn {
@@ -118,10 +113,19 @@ button {
     height: 4rem;
     background-color: gray;
     transition: .1s ease-out all;
+    background-color: var(--btn-clr);
+    border-radius: 4px;
+    color: var(--bg-clr);
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .initialize-btn:hover {
-    background-color: white;
+    filter: brightness(160%);
+}
+
+.initialize-btn:active {
+    filter: brightness(100%);
 }
 
 button:hover {
@@ -129,4 +133,23 @@ button:hover {
 }
 button:active {
     transform: scale(1);
+}
+
+.footer {
+    font-size: 1rem;
+    color: var(--text-clr);
+}
+
+/* FINISH */
+.fa-github-square {
+    transition: transform 0.3s ease-in-out;
+    color: var(--btn-clr);
+    font-size: 2rem;
+}
+
+.fa-github-square:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+    color: var(--text-clr);
 }
