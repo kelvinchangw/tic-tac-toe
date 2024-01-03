@@ -22,6 +22,7 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: var(--bg-clr);
+    user-select: none;
 }
 
 button {
