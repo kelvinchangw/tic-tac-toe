@@ -5,6 +5,7 @@
     --text-clr: #E6E6E6;
     --win-clr: #5FFF5A;
     --draw-clr: #FF5A5F;
+    --tile-gap: 1rem;
 }
 
 * {
@@ -43,12 +44,11 @@ button {
 
 .container {
     display: flex;
-    justify-content: space-between;
-    padding: 1.2rem 0rem;
+    margin: 1.2rem 0rem;
 }
 
 .results-display {
-    gap: 1rem
+    gap: var(--tile-gap);
 }
 
 .results {
@@ -74,38 +74,44 @@ button {
 }
 
 .gameboard-display {
+    width: 30rem;
+    height: 30rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 30rem;
-    height: 30rem;
-    gap: 1rem;
+    gap: var(--tile-gap);
 }
 
 .field {
     width: 8rem;
     height: 8rem;
-    font-size: 4rem;
+    font-size: 5rem;
     transition: .1s ease-out all;
     border-radius: 4px;
     background-color: var(--field-clr);
+    filter: brightness(60%);
+    pointer-events: none;
 }
 
 .field:hover {
     background-color: var(--text-clr);
 }
 
-.inactive-tile {
-    filter: brightness(60%);
-    pointer-events: none;
+.field:hover::after {
+    content: attr(data-symbol);
+}
+
+.active-tile {
+    filter: brightness(100%);
+    pointer-events: auto;
 }
 
 .winning-tiles {
     background-color: var(--win-clr);
 }
 
-.losing-tiles {
+.draw-tiles {
     background-color: var(--draw-clr);
 }
 
@@ -141,7 +147,6 @@ button:active {
     color: var(--text-clr);
 }
 
-/* FINISH */
 .fa-github-square {
     transition: transform 0.3s ease-in-out;
     color: var(--btn-clr);
